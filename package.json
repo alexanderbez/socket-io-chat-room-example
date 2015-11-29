@@ -1,0 +1,35 @@
+{
+  "name": "socket-io-chat-room-example",
+  "version": "0.0.1",
+  "description": "A sample chatroom using socket.io and Express",
+  "main": "server.js",
+  "engines": {
+    "node": ">=4.x.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "supervisor node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexanderbez/socket-io-chat-room-example.git"
+  },
+  "keywords": [
+    "socket.io",
+    "express",
+    "chatroom"
+  ],
+  "author": "Alexander Bezobchuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alexanderbez/socket-io-chat-room-example/issues"
+  },
+  "homepage": "https://github.com/Alexanderbez/socket-io-chat-room-example#readme",
+  "dependencies": {
+    "app-root-path": "^1.0.0",
+    "express": "^4.13.3",
+    "moniker": "^0.1.2",
+    "morgan": "^1.6.1",
+    "socket.io": "^1.3.7"
+  }
+}
