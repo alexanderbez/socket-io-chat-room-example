@@ -66,9 +66,15 @@ let bootstrap = (io) => {
     // user typing event
     socket.on('user typing', (isTyping) => {
       if (isTyping === true) {
-        socket.broadcast.emit('user typing', socket.username);
+        socket.broadcast.emit('user typing', {
+          nickname: socket.username,
+          isTyping: true
+        });
       } else {
-        socket.broadcast.emit('user typing', null);
+        socket.broadcast.emit('user typing', {
+          nickname: socket.username,
+          isTyping: false
+        });
       }
     });
   });
