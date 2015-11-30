@@ -44,20 +44,17 @@ let bootstrap = (io) => {
   io.on('connection', (socket) => {
     socket.username = getUser(socket.id);
 
-    console.log(`${socket.username} user connected`);
     socket.emit('notify user', socket.username);
     socket.broadcast.emit('user connected', socket.username);
 
     // disconnect event
     socket.on('disconnect', () => {
-      console.log(`${socket.username} user disconnected`);
       socket.broadcast.emit('user disconnected', socket.username);
     });
 
     // chat message event
     socket.on('chat message', (params) => {
       let timestamp = (new Date()).toISOString();
-      console.log(`${socket.username} sent ${params.message}`);
 
       io.emit('chat message', {
         nickname: socket.username,
