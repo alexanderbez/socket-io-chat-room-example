@@ -47,7 +47,7 @@ socket.on('chat message', (params) => {
   var msg = `[${params.time}] - [${params.nickname}]: ${params.message}`;
 
   clearTimeout(_timeout);
-  _timeout = setTimeout(resetTyping, 3000);
+  _timeout = setTimeout(resetTyping, 0);
   $('#messages').append($('<li>').text(msg));
 });
 
