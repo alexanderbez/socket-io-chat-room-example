@@ -1,7 +1,9 @@
 'use strict';
 var socket = io();
 
-// Client configs
+/*
+  Client state configs
+*/
 var _typing  = false;
 var _timeout = undefined;
 var _users   = [];
