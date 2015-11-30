@@ -45,6 +45,7 @@ let bootstrap = (io) => {
     socket.username = getUser(socket.id);
 
     console.log(`${socket.username} user connected`);
+    socket.emit('notify user', socket.username);
     socket.broadcast.emit('user connected', socket.username);
 
     // disconnect event

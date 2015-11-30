@@ -51,12 +51,16 @@ socket.on('chat message', (params) => {
   $('#messages').append($('<li>').text(msg));
 });
 
-socket.on('user connected', (msg) => {
-  $('#messages').append($('<li class="event">').text(`${msg} has joined.`));
+socket.on('notify user', (user) => {
+  $('#messages').append($('<li class="event">').text(`You have joined as ${user}`));
 });
 
-socket.on('user disconnected', (msg) => {
-  $('#messages').append($('<li class="event">').text(`${msg} has left.`));
+socket.on('user connected', (user) => {
+  $('#messages').append($('<li class="event">').text(`${user} has joined.`));
+});
+
+socket.on('user disconnected', (user) => {
+  $('#messages').append($('<li class="event">').text(`${user} has left.`));
 });
 
 socket.on('user typing', (user) => {
